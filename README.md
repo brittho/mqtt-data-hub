@@ -53,7 +53,7 @@ Follow these steps to import and run the application in Eclipse IDE:
   * **Green Light:** a successful connection to the MQTT broker.
   * **Red Light + Error Popup:** the connection fails, an exception window will display detailing the issue.
 
-Quick Demo!
+[Quick Demo!](https://youtu.be/I-rztgOpTm4)
 
 ---
 
