@@ -40,10 +40,10 @@ Follow these steps to import and run the application in Eclipse IDE:
 3. Select **Run As** $\rightarrow$ **Java Application**.
 
 #### Mode 1: High-Speed View
-<img width="50%" alt="High-Speed View Mode" src="https://github.com/user-attachments/assets/2f9f7cde-9931-4d0e-8566-78bd43b53fde" />
+<img width="80%" alt="High-Speed View Mode" src="https://github.com/user-attachments/assets/6a037f4e-1bb3-453f-b284-d922806c2e64" />
 
 #### Mode 2: Multi-Topic Grid
-<img width="50%" alt="Multi-Topic Grid Mode" src="https://github.com/user-attachments/assets/ecaee284-6913-471d-a2fe-f27c6efcc998" />
+<img width="80%" alt="Multi-Topic Grid Mode" src="https://github.com/user-attachments/assets/7f7fd82a-c819-4351-82e6-ce5117bbe72a" />
 
 ### 3. Configure Broker
 
