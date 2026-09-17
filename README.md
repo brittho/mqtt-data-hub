@@ -47,11 +47,22 @@ Follow these steps to import and run the application in Eclipse IDE:
 ## Helper Scripts (Optional)
 
 The `scripts/` folder includes shell utilities for testing:
-* **`pub_stream.sh`**: Simulates publishing MQTT stream data to test the GUI.
-* **`launch_all.sh`**: Launches automated setup/test processes.
+* **`pub_stream.sh`**: Generates and publishes custom simulated real-time telemetry data to a single MQTT topic at a configurable interval.
+* **`launch_all.sh`**: Spawns and manages 6 concurrent `pub_stream.sh` background streams with a unified `Ctrl+C` shutdown trap.
+
+#### Pre-Configured Test Streams (`launch_all.sh`)
+
+The `launch_all.sh` script comes pre-tested with 6 parallel streams. You can modify the topic names (`-t`), value ranges (`-1`, `-2`), or target brokers (`-H`, `-p`) directly inside the script as needed:
+
+* `sensor/node01/ambient` — (Node 1) ambient telemetry
+* `sensor/node02/ambient` — (Node 2) ambient telemetry
+* `sensor/node02/ambient/pct` — (Node 2, scaled percentage) ambient telemetry stream (`-1 100 -2 100`)
+* `sensor/node03/grid_substation` — (Node 3) substation monitoring stream
+* `sensor/node04/inverter` — (Node 4) primary inverter output stream
+* `sensor/node04/inverter/pct` — (Node 4, scaled percentage) inverter output stream (`-1 100 -2 100`)
 
 To make them executable on macOS/Linux:
 ```bash
 chmod +x scripts/*.sh
-./scripts/pub_stream.sh
+./scripts/launch_all.sh
 ```
