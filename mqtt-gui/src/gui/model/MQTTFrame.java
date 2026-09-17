@@ -916,43 +916,66 @@ public class MQTTFrame implements ActionListener, MqttCallback, Runnable {
 	}
 
 	public void plotOnHighFrequency(XYSeriesHighFrequency g, String t, MqttMessage m) {
-		double t0; 
-		System.out.println("PlotOnHighFrequency function is called");
+		// System.out.println("plotOnHighFrequency() is called");
 		if (!g.txtTopic.getText().isEmpty() && t.equals(g.txtTopic.getText())) {
-			if(countNumDataHighFrequency <= g.numLength) {
-				subPanelContr.updateReceivedData( t, m.getPayload(), m.getQos(), m.isRetained() );
-				t0 = currentTime - g.tref;
-				g.goals.add(t0/1000,subPanelContr.valueOneL);
-				g.trefPrivate = System.currentTimeMillis();
-				countNumDataHighFrequency++;
-			} else {
-				clearDataAfterCertainInput(highFrequencyGraph);
-			}
-		}
+			
+			// 1. Update SubPanel received data
+			subPanelContr.updateReceivedData(t, m.getPayload(), m.getQos(), m.isRetained());
+			
+			// 2. Parse payload consistent with Low Frequency logic
+			String dataString = new String(m.getPayload());
+			String valueOne = dataString.substring(0, 10).split("x")[1];
+			int valueOneExtractFromHex = IntValExtraction(valueOne);
 
-		//We want the file to display the data that being displayed right before the clear button is clicked
-		BufferedWriter out = null;
-		t0 = MQTTFrame.currentTime - g.tref;
-		try {
-			System.out.println("About to txtFilename.getText() in high frequency");
-			if(!g.txtFilename.getText().trim().isEmpty()) {
-				FileWriter fstream = new FileWriter(g.txtFilename.getText(), true); //true = append data
-				out = new BufferedWriter(fstream);
-				out.write(t0/1000 + "\t" + subPanelContr.valueOneL + "\n");
-			}
-		} catch (IOException ex) {
-			System.err.println("Error: " + ex.getMessage());
-			ex.printStackTrace();
-		} finally {
-			if (out != null) {
+			// 3. Calculate elapsed time
+			double t0 = (currentTime - g.tref) / 1000.0;
+
+			// 4. Thread-safe UI update
+			javax.swing.SwingUtilities.invokeLater(() -> {
+				g.goals.add(t0, valueOneExtractFromHex);
+				
+				// Auto-scroll X-axis window
+				if (t0 > g.doubleRecordingLength && g.doubleRecordingLength > 0) {
+					((org.jfree.chart.plot.XYPlot) g.cp.getChart().getPlot())
+						.getDomainAxis().setRange(t0 - g.doubleRecordingLength, t0);
+				}
+			});
+
+			// 5. Corrected File Writing Logic (Inside Topic Check & Directory Matching)
+			// Note: We want the file to display the data that being displayed right before the clear button is clicked.
+			if (!g.txtFilename.getText().trim().isEmpty()) {
+				BufferedWriter out = null;
 				try {
-					out.close();
-				} catch (IOException ioex) {
-					ioex.printStackTrace();
+					// Ensure directory path matches LowFreq behavior
+					String filePath = "./data-files/" + g.txtFilename.getText();
+					File file = new File(filePath);
+					
+					// Ensure parent directories exist
+					if (file.getParentFile() != null) {
+						file.getParentFile().mkdirs();
+					}
+
+					FileWriter fstream = new FileWriter(file, true); // true = append mode.
+					out = new BufferedWriter(fstream);
+					
+					// Write timestamp and extracted signal value
+					out.write(t0 + "\t" + valueOneExtractFromHex + "\n");
+				} catch (IOException ex) {
+					System.err.println("High Frequency File Write Error: " + ex.getMessage());
+					ex.printStackTrace();
+				} finally {
+					if (out != null) {
+						try {
+							out.close();
+						} catch (IOException ioex) {
+							ioex.printStackTrace();
+						}
+					}
 				}
 			}
 		}
 	}
+
 	/**
 	 * The method is part of the MqttCallback interface<BR>
 	 * Pass the message as is to the SubPanel object which will display it.
