@@ -1,7 +1,9 @@
 # MQTT Data Hub
 Extensible, real-time MQTT visualization studio built with thread-safe Java messaging architecture.
 
-<img width="1796" height="1132" alt="image" src="https://github.com/user-attachments/assets/56073fa9-1cae-4b8d-9070-58c2b5467748" />
+> **Project History:** Developed during my sophomore year (2021–2022) for the UIUC Advanced Power Lab. Published as-is to preserve the original real-time multi-threading architecture and functional proof-of-concept.
+
+<img width="90%" alt="image" src="https://github.com/user-attachments/assets/56073fa9-1cae-4b8d-9070-58c2b5467748" />
 
 
 
@@ -33,6 +35,12 @@ Follow these steps to import and run the application in Eclipse IDE:
    `mqtt-gui` $\rightarrow$ `src` $\rightarrow$ `gui.model` $\rightarrow$ `MQTTFrame.java`
 2. Right-click **`MQTTFrame.java`**.
 3. Select **Run As** $\rightarrow$ **Java Application**.
+
+#### Mode 1: High-Speed View
+<img width="50%" alt="High-Speed View Mode" src="https://github.com/user-attachments/assets/2f9f7cde-9931-4d0e-8566-78bd43b53fde" />
+
+#### Mode 2: Multi-Topic Grid
+<img width="50%" alt="Multi-Topic Grid Mode" src="https://github.com/user-attachments/assets/ecaee284-6913-471d-a2fe-f27c6efcc998" />
 
 ---
 
