@@ -45,11 +45,20 @@ Follow these steps to import and run the application in Eclipse IDE:
 #### Mode 2: Multi-Topic Grid
 <img width="50%" alt="Multi-Topic Grid Mode" src="https://github.com/user-attachments/assets/ecaee284-6913-471d-a2fe-f27c6efcc998" />
 
+### 3. Configure Broker
+
+1. Use the default local broker setting (`127.0.0.1:1883`) or enter your target Broker IP address and port (see [Prerequisites](https://github.com/brittho/mqtt-data-hub/edit/main/README.md#prerequisites)).
+2. Click `Connect`.
+  * **Yellow Light:** the application is actively attempting to connect.
+  * **Green Light:** a successful connection to the MQTT broker.
+  * **Red Light + Error Popup:** the connection fails, an exception window will display detailing the issue.
+
+Quick Demo!
+
 ---
 
 ## Helper Scripts (Optional)
-
-The `scripts/` folder includes shell utilities for testing:
+If you don't have active live telemetry streams, the `scripts/` folder includes shell utilities for testing:
 * **`pub_stream.sh`**: Generates and publishes custom simulated real-time telemetry data to a single MQTT topic at a configurable interval.
 * **`launch_all.sh`**: Spawns and manages 6 concurrent `pub_stream.sh` background streams with a unified `Ctrl+C` shutdown trap.
 
