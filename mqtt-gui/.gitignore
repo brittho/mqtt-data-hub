@@ -1,0 +1,21 @@
+# Compiled binaries
+bin/
+*.class
+
+# Log files
+*.log
+
+# Ignore compiled/generated output JARs...
+*.jar
+
+# ...BUT force Git to track all JAR dependencies inside your lib folder
+!lib/*.jar
+!lib/**/*.jar
+
+# Mac OS metadata
+.DS_Store
+
+# Eclipse temporary metadata
+tmp/
+*.tmp
+.metadata/
