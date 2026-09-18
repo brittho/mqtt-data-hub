@@ -16,6 +16,9 @@ A Java-based Graphical User Interface (GUI) application for publishing, subscrib
 * **Java Development Kit (JDK):** Version 11 or higher installed on your system.
 * **Eclipse IDE:** Any modern version of Eclipse IDE for Java Developers.
 * **MQTT Broker:** A running broker is required to publish and subscribe to topics.
+
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/68632f84-dc54-4d8d-b092-438c143c6ee7" />
+
   * **macOS:** Follow this step-by-step guide to [Install Mosquitto MQTT Broker on macOS](https://brittanyho.com/installing-a-mqtt-broker-on-macos/) for quick plug-and-play local setup (`127.0.0.1:1883`).
   * **Other OS / Remote:** You can use any standard MQTT broker (e.g., Mosquitto, HiveMQ). Ensure your broker's host IP and port match the configuration in `mqtt.properties` or your router setup.
 
