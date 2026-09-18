@@ -79,5 +79,6 @@ The `launch_all.sh` script comes pre-tested with 6 parallel streams. You can mod
 To make them executable on macOS/Linux:
 ```bash
 chmod +x scripts/*.sh
-./scripts/launch_all.sh
+cd scripts
+./launch_all.sh
 ```
