@@ -1,6 +1,8 @@
 # MQTT Data Hub
 Extensible, real-time MQTT visualization studio built with thread-safe Java messaging architecture.
 
+[Quick Demo!](https://youtu.be/I-rztgOpTm4)
+
 > **Project History:** Developed during my sophomore year (2021–2022) for the UIUC Advanced Power Lab. Published as-is to preserve the original real-time multi-threading architecture and functional proof-of-concept.
 
 <img width="90%" alt="image" src="https://github.com/user-attachments/assets/56073fa9-1cae-4b8d-9070-58c2b5467748" />
@@ -55,8 +57,6 @@ Follow these steps to import and run the application in Eclipse IDE:
   * **Yellow Light:** the application is actively attempting to connect.
   * **Green Light:** a successful connection to the MQTT broker.
   * **Red Light + Error Popup:** the connection fails, an exception window will display detailing the issue.
-
-[Quick Demo!](https://youtu.be/I-rztgOpTm4)
 
 ---
 
