@@ -5,7 +5,7 @@ Extensible, real-time MQTT visualization studio built with thread-safe Java mess
 
 > **Project History:** Developed during my sophomore year (2021–2022) for the UIUC Advanced Power Lab. Published as-is to preserve the original real-time multi-threading architecture and functional proof-of-concept.
 
-<img width="90%" alt="image" src="https://github.com/user-attachments/assets/56073fa9-1cae-4b8d-9070-58c2b5467748" />
+<img width="95%" alt="image" src="https://github.com/user-attachments/assets/56073fa9-1cae-4b8d-9070-58c2b5467748" />
 
 
 
@@ -19,7 +19,7 @@ A Java-based Graphical User Interface (GUI) application for publishing, subscrib
 * **Eclipse IDE:** Any modern version of Eclipse IDE for Java Developers.
 * **MQTT Broker:** A running broker is required to publish and subscribe to topics.
 
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/68632f84-dc54-4d8d-b092-438c143c6ee7" />
+  <img width="75%" alt="image" src="https://github.com/user-attachments/assets/68632f84-dc54-4d8d-b092-438c143c6ee7" />
 
   * **macOS:** Follow this step-by-step guide to [Install Mosquitto MQTT Broker on macOS](https://brittanyho.com/installing-a-mqtt-broker-on-macos/) for quick plug-and-play local setup (`127.0.0.1:1883`).
   * **Other OS / Remote:** You can use any standard MQTT broker (e.g., Mosquitto, HiveMQ). Ensure your broker's host IP and port match the configuration in `mqtt.properties` or your router setup.
