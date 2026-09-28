@@ -3,7 +3,7 @@ Extensible, real-time MQTT visualization studio built with thread-safe Java mess
 
 [Quick Demo!](https://youtu.be/I-rztgOpTm4)
 
-> **Project History:** Developed during my sophomore year (2021–2022) for the UIUC Advanced Power Lab. Published as-is to preserve the original real-time multi-threading architecture and functional proof-of-concept.
+> **Project History:** Developed during my sophomore year (2021–2022) for the UIUC Advanced Power Applications Lab. Published as-is to preserve the original real-time multi-threaded architecture and fully functional, extensible application.
 
 <img width="95%" alt="image" src="https://github.com/user-attachments/assets/56073fa9-1cae-4b8d-9070-58c2b5467748" />
 
