@@ -1,5 +1,5 @@
 # MQTT Data Hub
-Extensible, real-time MQTT visualization studio built with thread-safe Java messaging architecture.
+Extensible, real-time MQTT visualization studio built with thread-safe Java messaging architecture, featuring decoupled, non-blocking disk persistence for high-throughput multi-stream logging.
 
 [Quick Demo!](https://youtu.be/I-rztgOpTm4)
 
